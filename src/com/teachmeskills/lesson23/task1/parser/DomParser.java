@@ -1,17 +1,19 @@
 package com.teachmeskills.lesson23.task1.parser;
 
 import com.teachmeskills.lesson23.task1.constants.Constants;
-import com.teachmeskills.lesson23.task1.model.Sonnet;
 import com.teachmeskills.lesson23.task1.service.Service;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.FileWriter;
 
+/**
+ * The DomParser class contains the parser method, which parses an XML document using the DOM method
+ */
 public class DomParser {
-    public static void parser(Sonnet sonnet) throws Exception {
 
-        Node rootNode = Service.fileInput().getFirstChild();
+    public static void parser() throws Exception {
+        Node rootNode = Service.fileInputDom().getFirstChild();
         NodeList nodeSonnet = rootNode.getChildNodes();
         String lastName = null;
         String firstName = null;
@@ -34,7 +36,6 @@ public class DomParser {
                         title = nodeSonnet.item(i).getTextContent();
                         writer.write(title + "\n");
                     } catch (Exception ex) {
-
                         System.out.println("File not found");
                     }
                     System.out.println("Title: " + title);

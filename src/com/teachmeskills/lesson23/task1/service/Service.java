@@ -6,8 +6,11 @@ import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
+/**
+ *The Service class contains a fileInputDom method that reads an XML file
+ */
 public class Service {
-    public static Document fileInput() throws Exception {
+    public static Document fileInputDom() throws Exception {
         File file = new File(Constants.PATCH_FILE_XML);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         return dbf.newDocumentBuilder().parse(file);
